@@ -1,6 +1,6 @@
 # Playtime
 
-Este proyecto cuenta con
+Este proyecto cuenta con:
 - Frontend realizado en React
 - Backend realizado en Django
 - IA utilizando visión por computadora y machine learning
