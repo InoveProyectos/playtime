@@ -45,7 +45,9 @@ LOCAL_APPS = [
 
 THIRD_APPS = [
     'rest_framework',
+    'django_filters',
     'corsheaders',
+    'rest_framework.authtoken',
 ]
 
 INSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS
@@ -63,6 +65,24 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'playtime.urls'
+
+# Configuraciones de autenticacion , permisos en DRF y Filtros
+
+REST_FRAMEWORK = {
+
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+    
+    'DEFAULT_PERMISSION_CLASSES': [
+        # Este permiso se utiliza en el caso de estar autenticado
+        #'rest_framework.permissions.IsAuthenticated',
+        # Para crear un usuario o acceder sin estar autenticado
+        'rest_framework.permissions.AllowAny',
+    ],
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
 
 # Configuraciones de CORS
 
