@@ -88,6 +88,7 @@ REST_FRAMEWORK = {
 
 CORS_ALLOWED_ORIGINS = [
     'https://*',
+    'http://*',
 ]
 
 CORS_ALLOW_METHODS = (
