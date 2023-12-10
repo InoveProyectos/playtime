@@ -11,7 +11,9 @@ import Deposito from "../components/Deposito";
 import Stock from "../components/Stock";
 import Mantenimiento from "../components/Mantenimiento";
 
-const RouterPrincipal = () => {
+const RouterPrincipal = (props) => {
+  // const { auth } = props;
+
   return (
     <BrowserRouter>
       <CssBaseline />

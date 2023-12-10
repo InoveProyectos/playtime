@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
 import { Autorizacion } from "../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-  const { autenticado, setAutenticado } = useContext(Autorizacion);
+  const { setAuth } = useContext(Autorizacion);
   const [valido, setValido] = useState("Ingresa tu usuario");
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handlerSubmit = (e) => {
     e.preventDefault();
@@ -20,9 +20,9 @@ export default function Login() {
       return;
     }
     //Si el susuario es correcto, automanticamente entra al dashboard
-    setAutenticado(true);
-    console.log(autenticado);
-    autenticado ? navigate("/stock-prueba") : navigate("/");
+    setAuth(true);
+    sessionStorage.setItem("isAuthenticated", "true");
+    // autenticado ? navigate("/home") : navigate("/");
   };
 
   return (
