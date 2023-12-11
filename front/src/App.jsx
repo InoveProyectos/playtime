@@ -1,16 +1,20 @@
-import { useState } from "react";
-
 import "./App.css";
-import PageRoutes from "./routes/PageRoutes";
-import { Autorizacion } from "./context/AuthContext";
+import RouterPrincipal from "./router/RouterPrincipal";
+import { useState } from "react";
+import { Autorizacion, initAutenticacion } from "./context/AuthContext";
+import Login from "./components/Login";
 
 function App() {
-  const [autenticado, setAutenticado] = useState("");
+  const [auth, setAuth] = useState(initAutenticacion());
 
   return (
     <>
-      <Autorizacion.Provider value={{ autenticado, setAutenticado }}>
-        <PageRoutes />
+      <Autorizacion.Provider value={{  auth, setAuth  }}>
+        {auth ? (
+          <div className="App">
+            <RouterPrincipal auth={auth}/>
+          </div>
+        ) : <Login/>}
       </Autorizacion.Provider>
     </>
   );
