@@ -24,7 +24,7 @@ class Articulo(models.Model):
     punto_de_reorden = models.PositiveIntegerField(default=0) 
     # El punto de reorden es la cantidad minima de un artículo, a partir de la cual se debe
     # hacer una solicitud de reposicion.
-    #  
+     
     class Meta:
         verbose_name = 'articulo'
         verbose_name_plural = 'articulos'
@@ -35,3 +35,35 @@ class Articulo(models.Model):
         La función str representa lo que retorna cuando llamamos al objeto
         '''
         return self.nombre
+
+
+class Formula(models.Model):
+    articulo_id = models.ForeignKey(Articulo, on_delete=models.CASCADE, related_name='productos')
+
+
+class Deposito(models.Model):
+    '''
+    Genera una tabla que almacena los nombres de los distintos depositos.
+    '''
+    nombre = models.CharField(max_length=60, unique=True, verbose_name='Nombre Deposito')
+
+
+    def __str__(self):
+        '''
+        La función str representa lo que retorna cuando llamamos al objeto
+        '''
+        return self.nombre
+
+
+class Stock(models.Model):
+    '''
+    Genera una tabla que almacena las cantidades en stock de cada artículo de cada deposito.
+    '''
+    articulo_id = models.ForeignKey(Articulo, on_delete=models.CASCADE)
+    deposito_id = models.ForeignKey(Deposito, on_delete=models.CASCADE)
+    cantidad = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        
+        return self.articul_id
+
