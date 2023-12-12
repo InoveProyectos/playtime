@@ -39,6 +39,7 @@ class Articulo(models.Model):
 
 class Formula(models.Model):
     articulo_id = models.ForeignKey(Articulo, on_delete=models.CASCADE, related_name='productos')
+    articulo_id = models.ForeignKey(Articulo, on_delete=models.CASCADE)
 
 
 class Deposito(models.Model):
