@@ -7,6 +7,7 @@ class Categoria(models.Model):
     Esta clase hereda de django models.Model, y crea una tabla llamada categorias,
     para almacenar las distintas categorias asignada a cada uno de los articulos.
     '''
+    id = models.BigAutoField(db_column='ID', primary_key=True)
     nombre = models.CharField(max_length=60, unique=True, verbose_name='Nombre de categoria')
 
     def __str__(self):
@@ -17,8 +18,9 @@ class Articulo(models.Model):
     '''
     Genera una tabla que almacena articulos, y cada columna recibe el nombre de cada atributo
     '''
+    id = models.BigAutoField(db_column='ID', primary_key=True)
     nombre = models.CharField(max_length=60, verbose_name='Nombre articulo')
-    categoria_id = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     codigo = models.CharField(max_length=60)
     precio_unitario = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
     punto_de_reorden = models.PositiveIntegerField(default=0) 
@@ -38,14 +40,16 @@ class Articulo(models.Model):
 
 
 class Formula(models.Model):
-    articulo_id = models.ForeignKey(Articulo, on_delete=models.CASCADE, related_name='productos')
-    articulo_id = models.ForeignKey(Articulo, on_delete=models.CASCADE)
+    id = models.BigAutoField(db_column='ID', primary_key=True)
+    articulo = models.ForeignKey(Articulo, on_delete=models.CASCADE, related_name='productos')
+    articulo = models.ForeignKey(Articulo, on_delete=models.CASCADE)
 
 
 class Deposito(models.Model):
     '''
     Genera una tabla que almacena los nombres de los distintos depositos.
     '''
+    id = models.BigAutoField(db_column='ID', primary_key=True)
     nombre = models.CharField(max_length=60, unique=True, verbose_name='Nombre Deposito')
 
 
@@ -60,11 +64,12 @@ class Stock(models.Model):
     '''
     Genera una tabla que almacena las cantidades en stock de cada artículo de cada deposito.
     '''
-    articulo_id = models.ForeignKey(Articulo, on_delete=models.CASCADE)
-    deposito_id = models.ForeignKey(Deposito, on_delete=models.CASCADE)
+    id = models.BigAutoField(db_column='ID', primary_key=True)
+    articulo = models.ForeignKey(Articulo, on_delete=models.CASCADE)
+    deposito = models.ForeignKey(Deposito, on_delete=models.CASCADE)
     cantidad = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         
-        return self.articul_id
+        return self.articulo
 
