@@ -23,8 +23,8 @@ class Articulo(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     codigo = models.CharField(max_length=60)
     precio_unitario = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
-    lote = models.CharField(max_length=20, blank=True, null=True)
-    vto = models.DateField(blank=True, null=True)
+    lote = models.CharField(max_length=20, default=None, blank=True, null=True)
+    vto = models.DateField(default=None, blank=True, null=True)
     punto_de_reorden = models.PositiveIntegerField(default=0) 
     # El punto de reorden es la cantidad minima de un artículo, a partir de la cual se debe
     # hacer una solicitud de reposicion.
