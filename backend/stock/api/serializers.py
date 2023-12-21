@@ -1,4 +1,7 @@
+from django.contrib.auth.models import User
+from rest_framework.authtoken.models import Token
 from rest_framework import serializers
+
 from stock.models import Articulo, Categoria, Deposito, Stock, Formula
 
 
@@ -47,3 +50,4 @@ class FormulaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Formula
         fields = ('__all__')
+        
