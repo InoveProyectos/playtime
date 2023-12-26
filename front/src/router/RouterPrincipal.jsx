@@ -10,6 +10,7 @@ import Home from "../components/Home";
 import Deposito from "../components/Deposito";
 import Stock from "../components/Stock";
 import Mantenimiento from "../components/Mantenimiento";
+import Clientes from "../components/Clientes.jsx";
 
 const RouterPrincipal = (props) => {
   // const { auth } = props;
@@ -22,6 +23,7 @@ const RouterPrincipal = (props) => {
           <Route path="/" element={<Home />} />
           <Route path="/articulo" element={<Articulo />} />
           <Route path="/deposito" element={<Deposito />} />
+          <Route path="/clientes" element={<Clientes />} />
           <Route path="/mantenimiento" element={<Mantenimiento />} />
           <Route path="/stock" element={<Stock />} />
         </Route>
