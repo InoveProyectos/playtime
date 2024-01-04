@@ -16,14 +16,14 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
 import { Outlet, useNavigate, useLocation } from "react-router-dom"; // Importamos Outlet, Link y useNavigate para la navegación
 import ArticleIcon from "@mui/icons-material/Article";
 import WarehouseIcon from "@mui/icons-material/Warehouse";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
+import { SvgIcon } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
+import UsersIcon from "@heroicons/react/24/solid/UsersIcon";
 
 const drawerWidth = 240;
 
@@ -105,7 +105,6 @@ export default function MiniDrawer() {
     setOpen(false);
   };
 
-  "Deposito", "Articulos", "Stock";
   const handleMenuItemClick = (text) => {
     switch (text) {
       case "Home":
@@ -113,6 +112,9 @@ export default function MiniDrawer() {
         break;
       case "Articulos":
         navigate("/articulo");
+        break;
+      case "Clientes":
+        navigate("/clientes");
         break;
       case "Deposito":
         navigate("/deposito");
@@ -160,42 +162,50 @@ export default function MiniDrawer() {
         </DrawerHeader>
         <Divider />
         <List>
-          {["Home", "Deposito", "Articulos", "Stock"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                }}
-                onClick={() => handleMenuItemClick(text)}
-              >
-                <ListItemIcon
+          {["Home", "Clientes", "Deposito", "Articulos", "Stock"].map(
+            (text, index) => (
+              <ListItem key={text} disablePadding sx={{ display: "block" }}>
+                <ListItemButton
                   sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
                   }}
+                  onClick={() => handleMenuItemClick(text)}
                 >
-                  {(() => {
-                    switch (text) {
-                      case "Home":
-                        return <HomeIcon />;
-                      case "Deposito":
-                        return <WarehouseIcon />;
-                      case "Articulos":
-                        return <ArticleIcon />;
-                      case "Stock":
-                        return <InventoryIcon />;
-                      default:
-                        return;
-                    }
-                  })()}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {(() => {
+                      switch (text) {
+                        case "Home":
+                          return <HomeIcon />;
+                        case "Clientes":
+                          return (
+                            <SvgIcon fontSize="small">
+                              <UsersIcon />
+                            </SvgIcon>
+                          );
+                        case "Deposito":
+                          return <WarehouseIcon />;
+                        case "Articulos":
+                          return <ArticleIcon />;
+                        case "Stock":
+                          return <InventoryIcon />;
+                        default:
+                          return;
+                      }
+                    })()}
+                  </ListItemIcon>
+                  <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                </ListItemButton>
+              </ListItem>
+            )
+          )}
         </List>
         <Divider />
         <List>
