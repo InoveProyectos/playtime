@@ -1,11 +1,24 @@
 from django.contrib import admin
+from import_export import resources
+from import_export.admin import ImportExportModelAdmin
 from stock.models import Articulo, Categoria, Deposito, Stock
 
 
 # Registro de los modelos en el admin
+class ArticuloResources(resources.ModelResource):
+    fields = (
+        'nombre',
+        'codigo',
+        'precio_unitario',
+        'punto_de_reorden',
+    )
+    class Meta:
+        model = Articulo
 
 @admin.register(Articulo)
-class ArticuloAdmin(admin.ModelAdmin):
+class ArticuloAdmin(ImportExportModelAdmin):
+
+    resouce_class = ArticuloResources
 
     fieldsets = (
        (None, {
