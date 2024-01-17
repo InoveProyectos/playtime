@@ -4,14 +4,16 @@
 El presente proyecto está realizado en Python3, y se deberá tener instalado el mismo para correr el proyecto
 
 ## Crear un Entorno Virtual 
-Con el objetivo de tener juntas, todas las dependencias que se vayan utilizando en el proyecto se crea un entorno virtual donde se van a alojar todas las dependencias que se vayan necesitando. Para instalar el entorno utilizar el siguiente comando:
+Con el objetivo de tener juntas, todas las dependencias que se vayan utilizando en el proyecto se crea un entorno virtual donde se van a alojar todas las dependencias que se vayan necesitando. Para instalar el entorno utilizar estando posicionados en el proyecto colocar el siguiente comando:
+
 python3 -m venv <nombre del entorno> 
 
+## Activar el Entorno Virtual
 Una vez creado en entorno, para trabajar en el mismo, se debe activar utilizando los siguientes comandos una vez posicionados en la carpeta donde fue creado el entorno:
-En linux:    source <nombre del entorno>/bin/activate
-En windows:  ingresar al entorno utilizando el comando cd <nombre del entorno>, y luego cd Scripts (que es una carpeta que se crea automaticamente dentro del entorno)y posteriormente /activate
 
-<nombre del entorno>/Scripts/activate
+En linux:    source <nombre del entorno>/bin/activate
+En windows:  <nombre del entorno>\Scripts\activate.bat
+
 
 ## Instalar las librerias en el entorno creado
 Una vez creado y activado el entorno virtual (fijarce que si está activado, al incio del prompt se debe ver entre paréntesis en nombre del entorno), se deben descargar todas las dependencias que estan el archivo requirements.txt del backend. Para esto se aplica el siguiente comando:
