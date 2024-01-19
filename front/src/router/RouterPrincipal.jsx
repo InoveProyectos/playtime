@@ -11,6 +11,7 @@ import Deposito from "../components/Deposito";
 import Stock from "../components/Stock";
 import Mantenimiento from "../components/Mantenimiento";
 import Clientes from "../components/Clientes.jsx";
+import { BarcodeScanner } from "../components/QrTest.jsx";
 
 const RouterPrincipal = (props) => {
   // const { auth } = props;
@@ -24,6 +25,7 @@ const RouterPrincipal = (props) => {
           <Route path="/articulo" element={<Articulo />} />
           <Route path="/deposito" element={<Deposito />} />
           <Route path="/clientes" element={<Clientes />} />
+          <Route path="/lector" element={<BarcodeScanner />} />
           <Route path="/mantenimiento" element={<Mantenimiento />} />
           <Route path="/stock" element={<Stock />} />
         </Route>
