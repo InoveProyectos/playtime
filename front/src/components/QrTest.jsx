@@ -24,7 +24,7 @@ export const BarcodeScanner = () => {
     <>
       <video ref={ref} />
       <p>
-        <span>Escaneamos el ID:</span>
+        <span>Escaneamos el ID!:</span>
         {console.log("result", result)}
         <span>{result}</span>
       </p>
