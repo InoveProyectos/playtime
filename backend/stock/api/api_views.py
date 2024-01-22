@@ -14,7 +14,7 @@ class LoginAPIView(APIView):
     '''
     Vista de API personalizada para recibir peticiones post
     Esquema de entrada:
-    {"username": "admin", "password": "admin123"}
+    {"username": "admin2", "password": "admin123"}
     '''
 
     parser_classes = [JSONParser]
