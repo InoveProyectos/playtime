@@ -50,4 +50,26 @@ class FormulaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Formula
         fields = ('__all__')
-        
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        # fields = '__all__'
+        exclude = ('password',)
+
+
+class UserLoginSerializer(serializers.Serializer):
+    username = serializers.CharField(write_only=True, required=True)
+    password = serializers.CharField(write_only=True, required=True)
+    class Meta:
+        fields = ('username', 'password')
+
+
+class TokenSerializer(serializers.ModelSerializer):
+    user = UserSerializer(many=False, read_only=True)
+    token = serializers.CharField(source='key', read_only=True)
+
+    class Meta:
+        model = Token
+        fields = ('user', 'token')
