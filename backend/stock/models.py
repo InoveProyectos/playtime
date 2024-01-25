@@ -28,6 +28,7 @@ class Articulo(models.Model):
     punto_de_reorden = models.PositiveIntegerField(default=0) 
     # El punto de reorden es la cantidad minima de un artículo, a partir de la cual se debe
     # hacer una solicitud de reposicion.
+    cantidad = models.PositiveIntegerField(default=0, blank=True, null=True)
      
     class Meta:
         verbose_name = 'articulo'
@@ -70,6 +71,10 @@ class Stock(models.Model):
     articulo = models.ForeignKey(Articulo, on_delete=models.CASCADE)
     deposito = models.ForeignKey(Deposito, on_delete=models.CASCADE)
     cantidad = models.PositiveIntegerField(default=0)
+    fecha_ingreso = models.DateField(default=None, blank=True, null=True)
+    cantidad_ingresada = models.PositiveIntegerField(default=0, blank=True, null=True)
+    fecha_salida = models.DateField(default=None, blank=True, null=True)
+    cantidad_salida = models.PositiveIntegerField(default=0, blank=True, null=True)
 
     def __str__(self):
         

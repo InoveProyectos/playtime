@@ -50,7 +50,7 @@ THIRD_APPS = [
     'corsheaders',
     'rest_framework.authtoken',
     'drf_yasg',
-    'import_export',
+    # 'import_export',
 ]
 
 INSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS
