@@ -45,8 +45,8 @@ class DepositoAdmin(admin.ModelAdmin):
 
 @admin.register(Stock)
 class DepositoAdmin(admin.ModelAdmin):
-    fields = ('articulo', 'deposito', 'cantidad')
-    list_display = ('articulo', 'deposito', 'cantidad')
+    fields = ('articulo', 'deposito', 'cantidad','cantidad_ingresada','fecha_ingreso','cantidad_salida','fecha_salida')
+    list_display = ('articulo', 'deposito', 'cantidad','cantidad_ingresada','fecha_ingreso','cantidad_salida','fecha_salida')
     list_filter = ('deposito',)
     search_fields = ['articulo']
 
