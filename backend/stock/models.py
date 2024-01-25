@@ -28,6 +28,7 @@ class Articulo(models.Model):
     punto_de_reorden = models.PositiveIntegerField(default=0) 
     # El punto de reorden es la cantidad minima de un artículo, a partir de la cual se debe
     # hacer una solicitud de reposicion.
+    cantidad = models.PositiveIntegerField(default=0, blank=True, null=True)
      
     class Meta:
         verbose_name = 'articulo'
