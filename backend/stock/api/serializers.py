@@ -41,7 +41,7 @@ class StockSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Stock
-        fields = ('articulo', 'deposito', 'cantidad')
+        fields = ('id','articulo', 'deposito', 'cantidad', 'fecha_ingreso', 'cantidad_ingresada', 'fecha_salida', 'cantidad_salida')
 
 
 class FormulaSerializer(serializers.ModelSerializer):
