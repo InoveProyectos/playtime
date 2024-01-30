@@ -52,6 +52,9 @@ class DepositoAdmin(admin.ModelAdmin):
     search_fields = ['articulo']
 
 
+
+
+
 # Modificación en título de panel de administración
 admin.site.site_header = 'PlayTime - Sitio de Administración -'
 

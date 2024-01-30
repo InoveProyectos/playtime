@@ -77,6 +77,5 @@ class Stock(models.Model):
     cantidad_salida = models.PositiveIntegerField(default=0, blank=True, null=True)
 
     def __str__(self):
-        
-        return self.articulo
+        return str(self.articulo)
 
