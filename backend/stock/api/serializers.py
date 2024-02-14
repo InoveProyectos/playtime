@@ -51,6 +51,13 @@ class FormulaSerializer(serializers.ModelSerializer):
         model = Formula
         fields = ('__all__')
 
+    def to_representation(self, instance):
+        return {
+            'id': instance.id,
+            'producto': instance.producto.nombre,
+            'articulo': instance.articulo.nombre,
+        }
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
