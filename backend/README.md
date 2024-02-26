@@ -32,5 +32,11 @@ Se ha instalado y configurado Swagger y Redoc, a fin de que se puedan ver y anal
 Una vez ingresado en la aplicación, llendo a http://127.0.0.1:8000/swagger o http://127.0.0.1:8000/redoc se
 podra visualizar cada uno de los endpoint, y llendo a http://127.0.0.1:8000/admin se ingresa en el administrador de Django (usuario: admin password: admin)
 
- 
+## Tabla Formula
+
+En esta tabla el administrador puede formar Productos, que a la vez se encuentran en la tabla Articulo y que a la vez 
+estén conformados por mas de un artículo que también se encuentran en la tabla Articulo.
+A titulo de ejemplo pueden ver lo que regresa el siguiente endpoint:
+http://127.0.0.1:8000/stock/formula/?producto=74
+
 

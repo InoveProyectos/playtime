@@ -3,11 +3,13 @@ from rest_framework import status
 from rest_framework.parsers import JSONParser
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.generics import ListAPIView
 from rest_framework.authentication import (BasicAuthentication, TokenAuthentication)
 from rest_framework.authtoken.models import Token
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
-from stock.api.serializers import UserLoginSerializer,TokenSerializer
+from stock.models import Formula,Articulo
+from stock.api.serializers import UserLoginSerializer,TokenSerializer,FormulaSerializer
 
 
 class LoginAPIView(APIView):
@@ -43,3 +45,13 @@ class LoginAPIView(APIView):
             data=user_login_serializer.errors,
             status=status.HTTP_400_BAD_REQUEST
         )
+
+class FormulaProductoList(ListAPIView):
+    serializer_class = FormulaSerializer
+    
+    def get_queryset(self):
+        queryset = Formula.objects.all()
+        producto = self.request.query_params.get('producto')
+        if producto is not None:
+            queryset = queryset.filter(producto=producto)
+        return queryset

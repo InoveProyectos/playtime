@@ -44,8 +44,8 @@ class Articulo(models.Model):
 
 class Formula(models.Model):
     id = models.BigAutoField(db_column='ID', primary_key=True)
-    articulo = models.ForeignKey(Articulo, on_delete=models.CASCADE, related_name='producto')
     articulo = models.ForeignKey(Articulo, on_delete=models.CASCADE)
+    producto = models.ForeignKey(Articulo, on_delete=models.CASCADE, related_name='producto', null=True, blank=True)
 
 
 class Deposito(models.Model):

@@ -1,7 +1,7 @@
 from django.contrib import admin
 # from import_export import resources
 # from import_export.admin import ImportExportModelAdmin
-from stock.models import Articulo, Categoria, Deposito, Stock
+from stock.models import Articulo, Categoria, Deposito, Stock, Formula
 
 
 # Registro de los modelos en el admin
@@ -30,7 +30,7 @@ class ArticuloAdmin(admin.ModelAdmin):
            'fields': ('lote', 'vto', 'punto_de_reorden')
        })
     )
-    list_display = ('nombre', 'codigo', 'categoria', 'precio_unitario', 'punto_de_reorden','cantidad')
+    list_display = ('id','nombre', 'codigo', 'categoria', 'precio_unitario', 'punto_de_reorden','cantidad')
     search_fields = ['nombre']
 
 
@@ -52,7 +52,11 @@ class DepositoAdmin(admin.ModelAdmin):
     search_fields = ['articulo']
 
 
-
+@admin.register(Formula)
+class FormulaAdmin(admin.ModelAdmin):
+    fields = ('producto','articulo')
+    list_display = ('producto','articulo')
+    search_fields = ['producto']
 
 
 # Modificación en título de panel de administración
