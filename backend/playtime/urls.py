@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from stock.api.api_views import LoginAPIView
+from stock.views import export_articulos_csv, import_articulos_csv, export_categorias_csv,import_categorias_csv
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
@@ -40,6 +41,10 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('user/login/', LoginAPIView.as_view()),
     path('stock/',include('stock.api.urls')),
+    path('export-articulos-csv/', export_articulos_csv),
+    path('import-articulos-csv/', import_articulos_csv),
+    path('export-categorias-csv/', export_categorias_csv),
+    path('import-categorias-csv/', import_categorias_csv),
     path('swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
