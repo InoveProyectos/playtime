@@ -39,7 +39,8 @@ class ArticuloAdmin(admin.ModelAdmin):
 
 @admin.register(Categoria)
 class CategoriaAdmin(admin.ModelAdmin):
-    fields = ('nombre',)
+    fields = ('id','nombre',)
+    list_display = ('id','nombre',)
 
 
 @admin.register(Deposito)

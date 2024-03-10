@@ -10,6 +10,11 @@ class Categoria(models.Model):
     id = models.BigAutoField(db_column='ID', primary_key=True)
     nombre = models.CharField(max_length=60, unique=True, verbose_name='Nombre de categoria')
 
+    class Meta:
+        verbose_name = 'categoria'
+        verbose_name_plural = 'categorias'
+        ordering = ['id']
+
     def save(self, *args, **kwargs):
         self.nombre = (self.nombre).upper()
         return super(Categoria, self).save(*args, **kwargs)
