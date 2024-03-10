@@ -37,7 +37,7 @@ def import_articulos_csv(request):
                     articulos.append(
                         Articulo(
                             codigo = row[0],
-                            nombre = row[1],
+                            nombre = row[1].upper(),
                             categoria = Categoria.objects.get(nombre=row[2]),
                             precio_unitario = row[3],
                             lote = row[4],
@@ -85,7 +85,7 @@ def import_categorias_csv(request):
             for row in data[1:]:
                 categorias.append(
                     Categoria(
-                        nombre=row[0]
+                        nombre=row[0].upper()
                   )
             )
         if len (categorias) > 0:

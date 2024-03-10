@@ -33,6 +33,8 @@ class ArticuloAdmin(admin.ModelAdmin):
     list_display = ('id','nombre', 'codigo', 'categoria', 'precio_unitario', 'punto_de_reorden','cantidad')
     search_fields = ['nombre']
     list_filter = ('categoria',)
+    list_display_links = ('nombre',)
+    ordering = ['id']
 
 
 @admin.register(Categoria)
