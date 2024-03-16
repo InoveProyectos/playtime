@@ -33,11 +33,14 @@ class ArticuloAdmin(admin.ModelAdmin):
     list_display = ('id','nombre', 'codigo', 'categoria', 'precio_unitario', 'punto_de_reorden','cantidad')
     search_fields = ['nombre']
     list_filter = ('categoria',)
+    list_display_links = ('nombre',)
+    ordering = ['id']
 
 
 @admin.register(Categoria)
 class CategoriaAdmin(admin.ModelAdmin):
-    fields = ('nombre',)
+    fields = ('id','nombre',)
+    list_display = ('id','nombre',)
 
 
 @admin.register(Deposito)

@@ -10,6 +10,15 @@ class Categoria(models.Model):
     id = models.BigAutoField(db_column='ID', primary_key=True)
     nombre = models.CharField(max_length=60, unique=True, verbose_name='Nombre de categoria')
 
+    class Meta:
+        verbose_name = 'categoria'
+        verbose_name_plural = 'categorias'
+        ordering = ['id']
+
+    def save(self, *args, **kwargs):
+        self.nombre = (self.nombre).upper()
+        return super(Categoria, self).save(*args, **kwargs)
+    
     def __str__(self):
         return self.nombre
     
@@ -19,7 +28,7 @@ class Articulo(models.Model):
     Genera una tabla que almacena articulos, y cada columna recibe el nombre de cada atributo
     '''
     id = models.BigAutoField(db_column='ID', primary_key=True)
-    nombre = models.CharField(max_length=60, verbose_name='Nombre articulo')
+    nombre = models.CharField(max_length=60, unique=True, verbose_name='Nombre articulo')
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     codigo = models.CharField(max_length=60)
     precio_unitario = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
@@ -33,8 +42,12 @@ class Articulo(models.Model):
     class Meta:
         verbose_name = 'articulo'
         verbose_name_plural = 'articulos'
-        ordering = ['nombre']
+        ordering = ['id']
 
+    def save(self, *args, **kwargs):
+        self.nombre = (self.nombre).upper()
+        return super(Articulo, self).save(*args, **kwargs)
+    
     def __str__(self):
         '''
         La función str representa lo que retorna cuando llamamos al objeto
@@ -47,6 +60,9 @@ class Formula(models.Model):
     articulo = models.ForeignKey(Articulo, on_delete=models.CASCADE)
     producto = models.ForeignKey(Articulo, on_delete=models.CASCADE, related_name='producto', null=True, blank=True)
 
+    def __str__(self):
+        return str(self.producto)
+
 
 class Deposito(models.Model):
     '''
@@ -55,7 +71,10 @@ class Deposito(models.Model):
     id = models.BigAutoField(db_column='ID', primary_key=True)
     nombre = models.CharField(max_length=60, unique=True, verbose_name='Nombre Deposito')
 
-
+    def save(self, *args, **kwargs):
+        self.nombre = (self.nombre).upper()
+        return super(Deposito, self).save(*args, **kwargs)
+    
     def __str__(self):
         '''
         La función str representa lo que retorna cuando llamamos al objeto

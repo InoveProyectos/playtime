@@ -24,18 +24,9 @@ codigo,nombre,categoria,precio_unitario,lote,vto,punto_de_reorden,cantidad
 1011,Dispenser sanitizante,P.T. TUERCAS,40.00,0,1899-12-30,110,25
 1012,Centerplay country club,P.T. TORNILLERIA,300.00,0,1899-12-30,75,16
 1013,Tubo de gateo,P.T. TUERCAS,20.00,0,1899-12-30,85,19
-2008,Soportes para paneles solares 4x20,MAT. ACERO INOXIDABLE,35.00,0,1899-12-30,70,14
-2009,Arandelas para ensamblaje 5x25,MAT. ACERO INOXIDABLE,8.50,0,1899-12-30,145,27
-2010,Suplementos para barras 6x30,MAT. ACERO INOXIDABLE,12.00,0,1899-12-30,95,18
-2011,Barras de soporte 5x25,MAT. ACERO INOXIDABLE,20.50,0,1899-12-30,75,21
-1014,Pisos de goma 5x25,P.T. TORNILLERIA,28.00,0,1899-12-30,65,11
-1015,Paneles solares 4x20,P.T. TUERCAS,80.00,0,1899-12-30,90,9
 1016,Calesita integradora 6x30,P.T. TORNILLERIA,125.00,0,1899-12-30,85,13
-1017,Calesita mac con patas 5x25,P.T. TUERCAS,160.00,0,1899-12-30,100,18
-1018,Mangrullo con bajada 4x20,P.T. TORNILLERIA,190.00,0,1899-12-30,95,22
 1019,Dispenser sanitizante 5x25,P.T. TUERCAS,45.00,0,1899-12-30,110,25
 1020,Centerplay country club 6x30,P.T. TORNILLERIA,320.00,0,1899-12-30,75,16
-1021,Tubo de gateo 5x25,P.T. TUERCAS,22.00,0,1899-12-30,85,19
 2012,Soportes para paneles solares 5x25,MAT. ACERO INOXIDABLE,38.00,0,1899-12-30,70,14
 2013,Arandelas para ensamblaje 6x30,MAT. ACERO INOXIDABLE,9.50,0,1899-12-30,145,27
 2014,Suplementos para barras 4x20,MAT. ACERO INOXIDABLE,13.00,0,1899-12-30,95,18
@@ -45,8 +36,6 @@ codigo,nombre,categoria,precio_unitario,lote,vto,punto_de_reorden,cantidad
 1024,Calesita integradora 4x20,P.T. TORNILLERIA,130.00,0,1899-12-30,85,13
 1025,Calesita mac con patas 6x30,P.T. TUERCAS,170.00,0,1899-12-30,100,18
 1026,Mangrullo con bajada 5x25,P.T. TORNILLERIA,200.00,0,1899-12-30,95,22
-1027,Dispenser sanitizante 6x30,P.T. TUERCAS,50.00,0,1899-12-30,110,25
-1028,Centerplay country club 4x20,P.T. TORNILLERIA,340.00,0,1899-12-30,75,16
 1029,Tubo de gateo 6x30,P.T. TUERCAS,24.00,0,1899-12-30,85,19
 2016,Soportes para paneles solares 6x30,MAT. ACERO INOXIDABLE,40.00,0,1899-12-30,70,14
 2017,Arandelas para ensamblaje 4x20,MAT. ACERO INOXIDABLE,10.00,0,1899-12-30,145,27
@@ -66,7 +55,6 @@ codigo,nombre,categoria,precio_unitario,lote,vto,punto_de_reorden,cantidad
 2023,Barras de soporte 5x25,MAT. ACERO INOXIDABLE,26.00,0,1899-12-30,75,21
 1038,Pisos de goma 5x25,P.T. TORNILLERIA,38.50,0,1899-12-30,65,11
 1039,Paneles solares 4x20,P.T. TUERCAS,95.00,0,1899-12-30,90,9
-1040,Calesita integradora 6x30,P.T. TORNILLERIA,140.00,0,1899-12-30,85,13
 1041,Calesita mac con patas 5x25,P.T. TUERCAS,190.00,0,1899-12-30,100,18
 1042,Mangrullo con bajada 4x20,P.T. TORNILLERIA,220.00,0,1899-12-30,95,22
 1043,Dispenser sanitizante 6x30,P.T. TUERCAS,60.00,0,1899-12-30,110,25

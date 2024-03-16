@@ -57,7 +57,11 @@ podra visualizar cada uno de los endpoint, y llendo a http://127.0.0.1:8000/admi
 En esta tabla el administrador puede formar Productos, que a la vez se encuentran en la tabla Articulo y que a la vez 
 estén conformados por mas de un artículo que también se encuentran en la tabla Articulo.
 A titulo de ejemplo pueden ver lo que regresa el siguiente endpoint:
-http://127.0.0.1:8000/stock/formula/?producto=74
+`http://127.0.0.1:8000/stock/formula/?producto=62`
 
+## Validaciones
 
+En las tablas Categoria, Articulo y Depósito, se han validado en que los nombres de categorias, productos o depósitos
+no pueden existir nombres duplicados, sino que deben ser únicos.
+También, si bien no es una validación propiamente dicha, en esos modelos los datos de los nombres ingresados, se pueden ingresar tanto en mayúsculas como minúsculas, pero siempre serán transformados en mayúsculas
 
